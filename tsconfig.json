@@ -3,9 +3,10 @@
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
-    "types": ["node", "@playwright/test"],
+    "types": ["node"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["./types", "./node_modules/@types"]
   }
 }

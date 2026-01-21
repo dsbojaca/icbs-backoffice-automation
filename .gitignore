@@ -31,3 +31,5 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 automation/core/config/secrets.ts
+.env
+.env.local

@@ -1,3 +1,5 @@
+import "dotenv/config";
+import oracledb from "oracledb";
 import { PlaywrightSetup } from "../../core/driver/playwrightSetup";
 
 export class SessionCleaner {
@@ -8,21 +10,26 @@ export class SessionCleaner {
   }
 
   async clearUserSession(username: string) {
-    // Ajusta esta URL a tu endpoint real de limpieza
-    const url = `${this.setup.getBaseUrl()}/api/clear-session`;
+    try {
+      const connection = await oracledb.getConnection({
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        connectString: process.env.DB_CONNECT
+      });
+      const query = `
+        DELETE FROM CL_ONLINE_USER
+        WHERE USER_NAME = :username
+      `;
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ username })
-    });
+      await connection.execute(query, { username });
 
-    if (!response.ok) {
-      console.log(`⚠ No se pudo limpiar sesión para ${username}`);
-    } else {
-      console.log(`🧹 Sesión limpiada para ${username}`);
+      await connection.commit();
+
+      console.log(`🧹 Sesión eliminada para el usuario ${username}`);
+
+      await connection.close();
+    } catch (error) {
+      console.error("⚠️ Error limpiando sesión o usuario sin sesión previa:", error);
     }
   }
 }

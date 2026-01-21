@@ -1,6 +1,9 @@
+
+import "dotenv/config";
 import { URLS } from "../config/urls";
 import { SECRETS } from "../config/secrets";
 import { ENV } from "../config/env";
+
 
 export class PlaywrightSetup {
   environment: string;
