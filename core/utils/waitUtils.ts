@@ -1,11 +1,9 @@
-import { Page } from "@playwright/test";
+import { Locator, expect  } from "@playwright/test";
 
-export const WaitUtils = {
-  async waitForLoad(page: Page, timeout: number = 5000) {
-    await page.waitForLoadState("networkidle", { timeout });
-  },
+export class WaitUtils {
+  static async waitAndClick(locator: Locator) {
+    await expect(locator).toBeVisible({ timeout: 5000 });
+    await locator.click();
+  }
+}
 
-  async waitForSelector(page: Page, selector: string, timeout: number = 5000) {
-    await page.waitForSelector(selector, { timeout });
-  },
-};

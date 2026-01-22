@@ -43,6 +43,6 @@ export class LoginWorkflow {
     await this.actions.clickLogin();
 
     // Validar que el login fue exitoso
-    //await expect(this.dashboardPage.userMenu()).toBeVisible();
+    //await expect(this.dashboardPage.userMenu()).toBeVisible({ timeout: 8000 });
   }
 }
