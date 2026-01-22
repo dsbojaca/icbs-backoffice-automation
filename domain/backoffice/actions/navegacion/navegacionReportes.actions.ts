@@ -1,6 +1,5 @@
 import { Page } from "@playwright/test";
 import { DashboardPage } from "../../pages/dashboard.page";
-import { WaitUtils } from "../../../../core/utils/waitUtils";
 
 export class NavegacionActionsReportes {
   private page: Page;
@@ -11,39 +10,46 @@ export class NavegacionActionsReportes {
     this.dashboard = new DashboardPage(page);
   }
 
-  // ---- LOGOUT ----
-  async logout() {
-    await WaitUtils.waitAndClick(this.dashboard.logoutButton());
-  }
 
   // ---- MENÚ REPORTES ----
   clickMenuReportes = async () => {
-    await WaitUtils.waitAndClick(this.dashboard.menuReportes());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
   };
 
   clickReporteEmpresasSinActividad = async () => {
-    await this.clickMenuReportes();
-    await WaitUtils.waitAndClick(this.dashboard.reporteEmpresasSinActividad());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
+    await this.dashboard.reporteEmpresasSinActividad().isEnabled();
+    await this.dashboard.reporteEmpresasSinActividad().click()
   };
 
   clickReporteEstadisticas = async () => {
-    await this.clickMenuReportes();
-    await WaitUtils.waitAndClick(this.dashboard.reporteEstadisticas());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
+    await this.dashboard.reporteEstadisticas().isEnabled();
+    await this.dashboard.reporteEstadisticas().click()
   };
 
   clickReporteRetencionBorrado = async () => {
-    await this.clickMenuReportes();
-    await WaitUtils.waitAndClick(this.dashboard.reporteRetencionBorrado());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
+    await this.dashboard.reporteRetencionBorrado().isEnabled();
+    await this.dashboard.reporteRetencionBorrado().click()
   };
 
   clickReporteDescargaSolicitados = async () => {
-    await this.clickMenuReportes();
-    await WaitUtils.waitAndClick(this.dashboard.reporteDescargaSolicitados());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
+    await this.dashboard.reporteDescargaSolicitados().isEnabled();
+    await this.dashboard.reporteDescargaSolicitados().click()
   };
 
   clickReporteTramites = async () => {
-    await this.clickMenuReportes();
-    await WaitUtils.waitAndClick(this.dashboard.reporteTramites());
+    await this.dashboard.menuReportes().isEnabled();
+    await this.dashboard.menuReportes().click();
+    await this.dashboard.reporteTramites().isEnabled();
+    await this.dashboard.reporteTramites().click()
   };
 
 }

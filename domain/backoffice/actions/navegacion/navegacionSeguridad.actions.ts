@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 import { DashboardPage } from "../../pages/dashboard.page";
-import { WaitUtils } from "../../../../core/utils/waitUtils";
+
 
 export class NavegacionActions {
   private page: Page;
@@ -10,50 +10,69 @@ export class NavegacionActions {
     this.page = page;
     this.dashboard = new DashboardPage(page);
   }
-  // ---- LOGOUT ----
-    async logout() {
-        await WaitUtils.waitAndClick(this.dashboard.logoutButton());
-    }
-    
+
   // ---- MENÚ SEGURIDAD ----
   clickMenuSeguridad = async () => {
-    await WaitUtils.waitAndClick(this.dashboard.menuSeguridad());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
   };
 
   clickSeguridadAdminIP = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadAdminIP());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadAdminIP().isEnabled();
+    await this.dashboard.seguridadAdminIP().click();
   };
+
 
   clickSeguridadVencimientoLlaves = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadVencimientoLlaves());
+
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadVencimientoLlaves().isEnabled();
+    await this.dashboard.seguridadVencimientoLlaves().click();
   };
+
 
   clickSeguridadAdminImagenes = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadAdminImagenes());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadAdminImagenes().isEnabled();
+    await this.dashboard.seguridadAdminImagenes().click();
   };
+
 
   clickSeguridadControlTransaccional = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadControlTransaccional());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadControlTransaccional().isEnabled();
+    await this.dashboard.seguridadControlTransaccional().click();
   };
 
+
   clickSeguridadPoliticaCredenciales = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadPoliticaCredenciales());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadPoliticaCredenciales().isEnabled();
+    await this.dashboard.seguridadPoliticaCredenciales().click();
+
   };
 
   clickSeguridadDiccionario = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadDiccionario());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadDiccionario().isEnabled();
+    await this.dashboard.seguridadDiccionario().click();
   };
 
+
   clickSeguridadBloqueoMasivoEmpresas = async () => {
-    await this.clickMenuSeguridad();
-    await WaitUtils.waitAndClick(this.dashboard.seguridadBloqueoMasivoEmpresas());
+    await this.dashboard.menuSeguridad().isEnabled();
+    await this.dashboard.menuSeguridad().click();
+    await this.dashboard.seguridadBloqueoMasivoEmpresas().isEnabled();
+    await this.dashboard.seguridadBloqueoMasivoEmpresas().click();
   };
+
 
 
 }

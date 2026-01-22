@@ -1,14 +1,9 @@
 import {LoginWorkflow} from "../login.workflow";
 import { Page, expect } from "@playwright/test";
 import { RegeneracionArchivosActions } from "../../actions/Clientes/clientesRegeneracionArchivos.actions";
-import { NavegacionActionsclientes } from "../../actions/Nevageacion/navegacionClientes.actions";
+import { NavegacionActionsclientes } from "../../actions/Navegacion/navegacionClientes.actions";
 import { RegeneracionArchivosPage} from "../../pages/Clientes/clientesRegeneracionArchivos.page";
 import { LoginActions } from "../../actions/login.actions";
-
-
-
-
-
 
 export class RegenerarArchivosWorkflow {
   // lo llenaremos más adelante
