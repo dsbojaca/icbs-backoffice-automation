@@ -1,9 +1,6 @@
 import { test } from "@playwright/test";
 import { SessionCleaner } from "../../data/dto/sessionCleaner";
 
-
-
-
 test("Limpiar sesión en Oracle", async () => {
   const cleaner = new SessionCleaner();
 
