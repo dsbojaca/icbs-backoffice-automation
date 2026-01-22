@@ -11,7 +11,12 @@ export class NavegacionActions {
   }
 
   async logout() {
+    
     await this.dashboard.userMenu().click();
     await this.dashboard.logoutButton().click();
   }
+
+
+
 }
+
