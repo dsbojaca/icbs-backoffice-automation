@@ -2,7 +2,7 @@
  import { DashboardPage } from "../../pages/dashboard.page";
  import { WaitUtils } from "../../../../core/utils/waitUtils";
  
- export class NavegacionActions {
+ export class NavegacionActionsEmpleados {
    private page: Page;
    private dashboard: DashboardPage;
  
