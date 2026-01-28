@@ -26,5 +26,18 @@ export class ReportesTramitesActions {
         await this.reportesTramitesPage.modalCerrar().isEnabled();
         await this.reportesTramitesPage.modalCerrar().click();
     }
+    checkPrimerCheckbox = async () => {
+        await this.reportesTramitesPage.primerCheckbox().isEnabled();
+        await this.reportesTramitesPage.primerCheckbox().check();
+    }
+
+    clickBotonAceptar = async () => {
+        await this.reportesTramitesPage.botonAceptar().isEnabled();
+        await this.reportesTramitesPage.botonAceptar().click();
+    }
+    clickBotonRechazar = async () => {
+        await this.reportesTramitesPage.botonRechazar().isEnabled();
+        await this.reportesTramitesPage.botonRechazar().click();
+    }   
 }
 

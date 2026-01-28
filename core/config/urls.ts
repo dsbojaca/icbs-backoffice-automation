@@ -8,13 +8,13 @@ const urlsByEnv: Record<string, { backofficeBase: string }> = {
     backofficeBase: "https://dev-backoffice.grupoaval.com",
   },
   qa: {
-    backofficeBase: "https://bo-auto-bocc.solem.cl/icbs-backoffice-web/Process?MID=&AID=LOGIN-0006&RQI=F920019ADAB34B78",
+    backofficeBase: "https://bo-auto-bavv.solem.cl/icbs-backoffice-web",
   },
-  staging: {
-    backofficeBase: "https://staging-backoffice.grupoaval.com",
+  cc: {
+    backofficeBase: "https://bo-cc-bocc.solem.cl/icbs-backoffice-web/",
   },
-  prod: {
-    backofficeBase: "https://backoffice.grupoaval.com",
+  auto: {
+    backofficeBase: "https://bo-auto-bocc.solem.cl/icbs-backoffice-web/",
   },
 };
 

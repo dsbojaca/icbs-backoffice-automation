@@ -76,7 +76,7 @@ cliRegeneracionArchivosSubMenu = () => this.page.locator('a', { hasText: 'Regene
 
   empleadosCambioClavePropia = () =>  this.page.getByRole("link", { name: "Cambio de Clave Propia Empleados" });
 
-  empleadosAutorizaciones = () =>  this.page.getByRole("link", { name: "Autorizaciones" });
+  empleadosAutorizaciones = () =>  this.page.getByRole("link", { name: "Autorizaciones" }).nth(1);
 
   empleadosConfigAutorizaciones = () =>  this.page.getByRole("link", { name: "Configuración de Autorizaciones" });
 

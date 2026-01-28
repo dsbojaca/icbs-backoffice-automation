@@ -15,7 +15,7 @@ export class ReportesDescargaArchivosSolicitadosWorkflow {
             this.reportesDescargaArchivosSolicitadosActions = new ReportesDescargaArchivosSolicitadosActions(page);
         }
 
-    async execute(username?: string, password?: string) {
+    async visualizarTodoslosArchivos(username?: string, password?: string) {
 
         // Realizar login
         await this.loguin.execute(username, password);  

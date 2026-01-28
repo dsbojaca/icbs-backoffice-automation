@@ -15,7 +15,7 @@ export class ReportesEstadisticasWorkflow {
             this.ReportesEstadisticasActions = new ReportesEstadisticasActions(page);
         }
 
-    async execute(username?: string, password?: string) {
+    async consultaBancoDetalles(username?: string, password?: string) {
 
         // Realizar login
         await this.loguin.execute(username, password);  
@@ -30,9 +30,28 @@ export class ReportesEstadisticasWorkflow {
         await this.ReportesEstadisticasActions.clickModalCerrar();
         await this.ReportesEstadisticasActions.clickComboButton();
         await this.ReportesEstadisticasActions.clickComboEventosPerfil();
+        
+        
+
+        //logout
+        await this.loguin.logout();
+    }
+
+    async consultaClienteDetalles(username?: string, password?: string) {
+
+        // Realizar login
+        await this.loguin.execute(username, password);  
+
+        // Navegar a Reportes Estadísticas
+        await this.navegacionActionsReportes.clickReporteEstadisticas();
+
+        // interacciones con el servicio
         await this.ReportesEstadisticasActions.clickTabEstadisticasCliente();
         await this.ReportesEstadisticasActions.clickComboButton();
         await this.ReportesEstadisticasActions.clickComboItemfinal();
         
+
+        //logout
+        await this.loguin.logout();
     }
 }

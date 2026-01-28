@@ -15,4 +15,10 @@ export class reportesTramitesPage {
   modalCerrar = () =>
     this.page.locator("span.ui-modalbox-close-img");
 
+  primerCheckbox = () =>
+  this.page.locator("input.ui-recordtable-selection-input[type='checkbox']").nth(1);
+
+  botonAceptar = () => this.page.locator("#btnAccept");
+  botonRechazar = () => this.page.locator("#btnReject");
+
 }

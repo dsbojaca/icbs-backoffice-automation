@@ -15,7 +15,7 @@ export class ReportesConsultaRetencionBorradoWorkflow {
             this.reportesConsultaRetencionBorradoActions = new ReportesConsultaRetencionBorradoActions(page);
         }
 
-    async execute(username?: string, password?: string) {
+    async consultarRegistrosEliminados(username?: string, password?: string) {
 
         // Realizar login
         await this.loguin.execute(username, password);  
@@ -31,6 +31,8 @@ export class ReportesConsultaRetencionBorradoWorkflow {
         await this.reportesConsultaRetencionBorradoActions.clickBotonConsultar();
         await this.reportesConsultaRetencionBorradoActions.validarTablaInformacion();
         
+        //Logout
+        await this.loguin.logout();
         
     }
 }

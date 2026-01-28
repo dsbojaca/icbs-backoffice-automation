@@ -16,7 +16,7 @@ export class ReportesTramitesWorkflow {
         this.navegacionActionsReportes = new NavegacionActionsReportes(page);
     }
 
-    async execute(username?: string, password?: string) {
+    async verDetalles(username?: string, password?: string) {
 
        // Realizar login
        await this.loguin.execute(username, password);
@@ -28,6 +28,41 @@ export class ReportesTramitesWorkflow {
         await this.reportesTramitesActions.clickPrimerIconoTabla();
         await this.reportesTramitesActions.clickprimerSubIconoTabla();
         await this.reportesTramitesActions.clickCerrarModal();
+
+
+    }
+
+     async aceptarTramite(username?: string, password?: string) {
+
+       // Realizar login
+       await this.loguin.execute(username, password);
+
+       // Navegar al reporte de trámites
+       await this.navegacionActionsReportes.clickReporteTramites();
+
+       //Iteracciones sobre el servicio
+        await this.reportesTramitesActions.clickPrimerIconoTabla();
+        await this.reportesTramitesActions.checkPrimerCheckbox();
+        await this.reportesTramitesActions.clickBotonAceptar();
+
+
+    }
+     async rechazarTramite(username?: string, password?: string) {
+
+       // Realizar login
+       await this.loguin.execute(username, password);
+
+       // Navegar al reporte de trámites
+       await this.navegacionActionsReportes.clickReporteTramites();
+
+       //Iteracciones sobre el servicio
+        await this.reportesTramitesActions.clickPrimerIconoTabla();
+        await this.reportesTramitesActions.checkPrimerCheckbox();
+        await this.reportesTramitesActions.clickBotonRechazar();
+
+
+        //logout
+        await this.loguin.logout();
 
 
     }

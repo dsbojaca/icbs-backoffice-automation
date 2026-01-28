@@ -45,4 +45,8 @@ export class LoginWorkflow {
     // Validar que el login fue exitoso
     //await expect(this.dashboardPage.userMenu()).toBeVisible({ timeout: 8000 });
   }
+  async logout() {
+    // Clic en Logout
+    await this.actions.logout();
+  }
 }
