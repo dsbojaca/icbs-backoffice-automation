@@ -29,7 +29,7 @@ export class LoginActions {
 
   async logout() {
     await this.dashboardPage.logoutButton().click();
-    WaitUtils.waitForLoad(this.page);
+    //WaitUtils.waitForLoad(this.page);
     await this.dashboardPage.LogoutExitosoMessage().isEnabled() ;
     //await WaitUtils.waitForLoad(this.page);
   }

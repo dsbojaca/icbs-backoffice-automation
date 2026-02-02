@@ -38,7 +38,7 @@ export class NavegacionActionsReportes {
     await this.dashboard.reporteRetencionBorrado().click()
   };
 
-  clickReporteDescargaSolicitados = async () => {
+  clickReporteDescargaArchivosSolicitados = async () => {
     await this.dashboard.menuReportes().isEnabled();
     await this.dashboard.menuReportes().click();
     await this.dashboard.reporteDescargaSolicitados().isEnabled();

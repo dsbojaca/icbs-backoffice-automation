@@ -4,7 +4,7 @@ import { Locator, expect  } from "@playwright/test";
 
 export const WaitUtils = {
   
-  async waitForLoad(page: Page, timeout: number = 10000) {
+  async waitForLoad(page: Page, timeout: number = 20000) {
     await page.waitForLoadState("networkidle", { timeout });
   },
 

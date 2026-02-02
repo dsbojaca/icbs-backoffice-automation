@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 import { DashboardPage } from "../../pages/dashboard.page";
 
 
-export class NavegacionActions {
+export class NavegacionActionsSeguridad {
   private page: Page;
   private dashboard: DashboardPage;
 
