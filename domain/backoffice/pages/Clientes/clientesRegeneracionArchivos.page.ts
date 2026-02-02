@@ -17,7 +17,8 @@ export class RegeneracionArchivosPage {
 
 // Locators de Carga de Archivos
   cargaArchivosButton = () => this.page.locator('.ui-tabs-text', { hasText: 'Carga de Archivos' });
-  
+  subirArchivos = () => this.page.locator('#fileToUpload');
+  cargarArhcivo = () => this.page.locator('#btnContinue');
 
 
 

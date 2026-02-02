@@ -28,6 +28,20 @@ cliAdministracionOnboardingSubMenu = () => this.page.locator('a', { hasText: 'Ad
 cliTokensVirtualesSubMenu = () => this.page.locator('a', { hasText: 'Tokens Virtuales' });
 cliRegeneracionArchivosSubMenu = () => this.page.locator('a', { hasText: 'Regeneración de Archivos' });
 
+//Locators del menú de navegación solucion
+solucionMenu = () => this.page.locator('.ui-menu-h3-text',{ hasText: 'Solucion' });
+solcuionAdministracionContenidoDemoSubMenu = () => this.page.locator('a', { hasText: 'Administración Contenido Demo' });
+solucionConsultasCodigoServicioSubMenu = () => this.page.locator('a', { hasText: 'Consulta de Código por Servicio' });
+solucionControlMontosHorarioServicioSubMenu = () => this.page.locator('a', { hasText: 'Control Montos Horario por Servicio' });
+solucionAdministracionAlertasSubMenu = () => this.page.locator('a', { hasText: 'Administración de Alertas' });
+solucionTiposProductoSubMenu = () => this.page.locator('a', { hasText: 'Tipos de Producto' });
+solucionParametrizacionServiciosSubMenu = () => this.page.locator('a', { hasText: 'Parametrización de Servicios' });
+solucionParametrosGeneralesMESubMenu = () => this.page.locator('a', { hasText: 'Parámetros Generales – M/E y OcciDivisas' });
+solucionParametrosGeneralesMatriculasSubMenu = () => this.page.locator('a', { hasText: 'Parámetros Generales – Matriculas Masivas' });
+solicionParametrosGeneralesSubMenu = () => this.page.locator('a', { hasText: 'Parámetros Generales' });
+solucionPublicacionesSubMenu = () => this.page.locator('a', { hasText: 'Publicaciones' });
+solucionCargaDatosSubMenu = () => this.page.locator('a', { hasText: 'Carga de Datos para la Solución' });
+solucionServidoresConexionesSubMenu = () => this.page.locator('a', { hasText: 'Servidores y Conexiones' });
 
 
 
